@@ -1,20 +1,20 @@
 #include <stdio.h>
-#define MAX 7
+#define MAX 8
 
 // Insere um dado
 void push(int elemento, int pilha[], int *topo) {
-	if ( *topo == MAX) {
-		//Pilha Cheia (tratamento)
+	if(*topo == MAX) {
+	    // Fila cheia (Tratamento)
 	} else {
-		*topo++;
-		pilha[*topo] = elemento;
+	    pilha[*topo] = elemento; 		
+	    (*topo)++;
 	}
 }
 
 // Retorna o ultimo dado
 int pop(int pilha[], int *topo) {
 	if ( *topo > 0 ) {
-		*topo--;
+		(*topo)--;
 	}
 	return pilha[*topo];
 }
@@ -31,5 +31,9 @@ int main () {
   
   ultimo = pop(pilha, &topo);
   
-  printf("%d", ultimo);
+  printf("%d \n", ultimo);
+  
+   for(int x=0; x < topo; x++) {
+		printf("%d ", pilha[x]);
+	}
 }
